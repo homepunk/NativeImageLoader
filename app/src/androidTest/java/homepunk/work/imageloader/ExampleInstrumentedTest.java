@@ -1,4 +1,4 @@
-package exam.homepunk.registration;
+package homepunk.work.imageloader;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("exam.homepunk.registration", appContext.getPackageName());
+        assertEquals("homepunk.work.imageloader", appContext.getPackageName());
     }
 }

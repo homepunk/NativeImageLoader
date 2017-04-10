@@ -1,4 +1,4 @@
-package exam.homepunk.registration.adapter;
+package homepunk.work.imageloader.adapter;
 
 import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
@@ -11,27 +11,27 @@ import android.widget.TextView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import exam.homepunk.registration.R;
-import exam.homepunk.registration.data.ImageLoaderTaskAsync;
+import homepunk.work.imageloader.R;
+import homepunk.work.imageloader.data.ImageLoaderTaskAsync;
 import timber.log.Timber;
 
-public class ImageLoaderAdapter extends RecyclerView.Adapter<ImageLoaderAdapter.ImageLoaderHolder> {
+public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageHolder> {
     private String[] imageUrls;
 
-    public ImageLoaderAdapter(String[] imageUrls) {
+    public ImageAdapter(String[] imageUrls) {
         this.imageUrls = imageUrls;
     }
 
     @Override
-    public ImageLoaderHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ImageHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View root = inflater.inflate(R.layout.item_image, parent, false);
 
-        return new ImageLoaderHolder(root);
+        return new ImageHolder(root);
     }
 
     @Override
-    public void onBindViewHolder(final ImageLoaderHolder holder, final int position) {
+    public void onBindViewHolder(final ImageHolder holder, int position) {
         String path = imageUrls[position];
         Timber.i("onBindViewHolder " + position);
         holder.showProgress();
@@ -59,7 +59,7 @@ public class ImageLoaderAdapter extends RecyclerView.Adapter<ImageLoaderAdapter.
         return imageUrls.length;
     }
 
-    public class ImageLoaderHolder extends RecyclerView.ViewHolder {
+    public class ImageHolder extends RecyclerView.ViewHolder {
         @Bind(R.id.item_image)
         ImageView imageView;
 
@@ -69,7 +69,7 @@ public class ImageLoaderAdapter extends RecyclerView.Adapter<ImageLoaderAdapter.
         @Bind(R.id.item_progress)
         ProgressBar progressBar;
 
-        public ImageLoaderHolder(View root) {
+        public ImageHolder(View root) {
             super(root);
             ButterKnife.bind(this, root);
         }

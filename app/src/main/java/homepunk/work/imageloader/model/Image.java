@@ -1,4 +1,4 @@
-package exam.homepunk.registration.model;
+package homepunk.work.imageloader.model;
 
 import android.graphics.Bitmap;
 

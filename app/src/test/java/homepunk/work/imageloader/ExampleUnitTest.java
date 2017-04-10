@@ -1,4 +1,4 @@
-package exam.homepunk.registration;
+package homepunk.work.imageloader;
 
 import org.junit.Test;
 

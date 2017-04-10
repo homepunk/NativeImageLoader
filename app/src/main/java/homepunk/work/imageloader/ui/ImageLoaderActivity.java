@@ -1,33 +1,30 @@
-package exam.homepunk.registration.ui;
+package homepunk.work.imageloader.ui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import exam.homepunk.registration.R;
-import exam.homepunk.registration.adapter.ImageLoaderAdapter;
-import exam.homepunk.registration.data.Constants;
-import exam.homepunk.registration.model.Image;
-import exam.homepunk.registration.ui.interfaces.IImageLoaderView;
+import homepunk.work.imageloader.R;
+import homepunk.work.imageloader.adapter.ImageAdapter;
+import homepunk.work.imageloader.model.Image;
+import homepunk.work.imageloader.ui.interfaces.IImageLoaderView;
+
+import static homepunk.work.imageloader.data.Constants.imageUrls;
 
 public class ImageLoaderActivity extends AppCompatActivity implements IImageLoaderView {
-    @Bind(R.id.toolbar)
-    Toolbar toolbar;
     @Bind(R.id.recycleview)
     RecyclerView imageLoaderRecycleView;
 
-    private ImageLoaderAdapter imageLoaderAdapter;
+    private ImageAdapter imageAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        setSupportActionBar(toolbar);
 
         setUpRecycleView();
 
@@ -44,8 +41,8 @@ public class ImageLoaderActivity extends AppCompatActivity implements IImageLoad
     }
 
     private void setUpRecycleView() {
-        imageLoaderAdapter = new ImageLoaderAdapter(Constants.imageUrls);
+        imageAdapter = new ImageAdapter(imageUrls);
         imageLoaderRecycleView.setLayoutManager(new LinearLayoutManager(this));
-        imageLoaderRecycleView.setAdapter(imageLoaderAdapter);
+        imageLoaderRecycleView.setAdapter(imageAdapter);
     }
 }

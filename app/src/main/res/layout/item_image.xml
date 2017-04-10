@@ -42,7 +42,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textColor="@color/whitePrimary"
+                android:textColor="@color/colorAccent"
                 android:layout_marginLeft="8dp" />
         </LinearLayout>
     </android.support.v7.widget.CardView>

@@ -1,4 +1,4 @@
-package exam.homepunk.registration.data;
+package homepunk.work.imageloader.data;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
